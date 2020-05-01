@@ -19,7 +19,9 @@
     "package:osx": "electron-packager ./ Soundnode --platform=darwin --out ./dist/Soundnode --version 1.4.4 --overwrite --icon ./app/soundnode.ico",
     "package:linux": "electron-packager ./ Soundnode --platform=linux --out ./dist/Soundnode --version 1.4.4 --overwrite --icon ./app/soundnode.icns",
     "package:win32": "electron-packager ./ Soundnode --platform=win32 --out ./dist/Soundnode --version 1.4.4 --overwrite --icon ./app/soundnode.icns",
-    "package:all": "npm run package:osx && npm run package:linux && npm run package:win32"
+    "package:all": "npm run package:osx && npm run package:linux && npm run package:win32",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "author": "Michael Lancaster",
   "license": "GPL-3.0",
@@ -58,6 +60,8 @@
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "toastr": "^2.1.2",
-    "universal-analytics": "^0.4.8"
-  }
+    "universal-analytics": "^0.4.8",
+    "snyk": "^1.316.1"
+  },
+  "snyk": true
 }
